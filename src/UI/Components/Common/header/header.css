@@ -1,0 +1,117 @@
+#commonHeader{
+    background: white;
+    height:10vh;
+    width:100vw;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+.mobile-view{
+    display:none;
+}
+
+#headerInner{
+    height:100%;
+    width: 80%;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#headerLogo{
+    height:60%;
+    display:flex;
+    align-items: center;
+    gap:5px;
+}
+
+#headerLogo img{
+    height:100%;
+}
+
+#headerButtons{
+    display:flex;
+    gap: 1vw;
+}
+
+#headerButtons button{
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+
+#headerSearch{
+    width:40%;
+    background: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    gap:5px;
+    align-items: center;
+    border-radius: 20px;
+    height: 25%;
+}
+
+#headerSearch input{
+    color:#909090;
+    background: none;
+    border:none;
+}
+
+#headerIcons button{
+    background: none;
+    border:none;
+    cursor:pointer;
+}
+
+#headerSearch input:focus{
+    outline:none;
+}
+
+#headerSearch input{
+    width:100%;
+}
+
+#headerIcons{
+    display:flex;
+    flex-direction: row;
+    width:fit-content;
+}
+
+@media (max-width: 1280px){
+    #headerInner{
+        width:100%;
+    }
+
+    #headerSearch{
+        width:20%;
+    }
+}
+
+@media (max-width:600px){
+
+    #headerSearch{
+        display:none;
+    }
+
+    #headerButtons{
+        display:none;
+    }
+
+    .mobile-view{
+        display:block;
+    }
+
+    #headerInner{
+        padding:10px;
+        width:100%;
+        justify-content: space-between;
+    }
+
+    #commonHeader{
+        width:100vw;
+    }
+}
