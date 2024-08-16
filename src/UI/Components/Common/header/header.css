@@ -1,13 +1,10 @@
 #commonHeader{
     background: white;
     height:10vh;
-    width:100vw;
+    width:100%;
     display:flex;
     align-items: center;
     justify-content: center;
-    position:absolute;
-    left:0;
-    top:0;
 }
 
 .mobile-view{
@@ -19,11 +16,11 @@
     width: 80%;
     display:flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 #headerLogo{
-    height:60%;
+    height:40%;
     display:flex;
     align-items: center;
     gap:5px;
@@ -35,7 +32,8 @@
 
 #headerButtons{
     display:flex;
-    gap: 1vw;
+    gap: 2%;
+    width:25%;
 }
 
 #headerButtons button{
@@ -82,16 +80,16 @@
 }
 
 @media (max-width: 1280px){
-    #headerInner{
+    /* #headerInner{
         width:100%;
-    }
+    } */
 
     #headerSearch{
         width:20%;
     }
 }
 
-@media (max-width:600px){
+@media (max-width:750px){
 
     #headerSearch{
         display:none;
@@ -106,8 +104,6 @@
     }
 
     #headerInner{
-        padding:10px;
-        width:100%;
         justify-content: space-between;
     }
 

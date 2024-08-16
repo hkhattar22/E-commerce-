@@ -1,9 +1,7 @@
 #commonFooter{
     background: #f0f0f0;
     position:absolute;
-    bottom:0;
-    left:0;
-    width:100vw;
+    width:100%;
     height:50vh;
     display:flex;
     align-items: center;
@@ -70,12 +68,12 @@
 }
 
 #newsletter{
-    width:70vw;
+    width:75%;
     height:15vh;
     background: black;
     z-index: 100;
     position:absolute;
-    top:-30%;
+    top:-100px;
     border-radius: 20px;
     padding:2%;
     display:flex;
@@ -245,7 +243,7 @@
     }
 }
 
-@media (max-width: 328px){
+@media (max-width: 400px){
     #newsletterText{
         font-size: 1.2rem;
     }
