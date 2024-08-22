@@ -44,7 +44,7 @@ const CartItem = ({item,  updateQuantity, deleteItem }) => {
                     <div id="itemCost">${item.price}</div>
                     <div id="itemQuantity">
                         <button onClick={decrementQuantity}>-</button>
-                        <span>{quantity}</span>
+                        <span>{item.quantity}</span>
                         <button onClick={incrementQuantity}>+</button>
                     </div>
                 </div>

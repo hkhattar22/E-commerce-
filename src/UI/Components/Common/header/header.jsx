@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './header.css'
 import Logo from '../../Assets/logo.png';
 import 'boxicons';
+import CartPage from "../../CartPage/cartpage";
 
 const Header = () => {
+    const navigate = useNavigate();
+    
+    const handleAddToCartClick = () => {
+        navigate('/cart');
+    };
 
     return (
         <div id="commonHeader">
@@ -24,7 +31,7 @@ const Header = () => {
                 </div>
                 <div id="headerIcons">
                     <button className="mobile-view"><box-icon name='search' size='20px'></box-icon></button>
-                    <button><box-icon name='cart' size="20px"></box-icon></button>
+                    <button onClick={handleAddToCartClick}><box-icon name='cart' size="20px"></box-icon></button>
                     <button><box-icon name='user-circle' size="20px"></box-icon></button>
                 </div>
             </div>
