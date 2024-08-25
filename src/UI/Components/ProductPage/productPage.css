@@ -4,33 +4,33 @@
     border-top: 2px solid #ccc;
 }
 
-#reviewsPage{
-    width:80%;
-    height:fit-content;
+#reviewsPage {
+    width: 80%;
+    height: fit-content;
 }
 
-#productQuantity button{
-    border:none;
+#productQuantity button {
+    border: none;
     background: none;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-#productReview{
+#productReview {
     height: 20px;
-    display:flex;
-    gap:5px;
+    display: flex;
+    gap: 5px;
 }
 
-.selected{
-    border:2px solid black;
+.selected {
+    border: 2px solid black;
 }
 
-#ratingInner{
+#ratingInner {
     margin-left: 10px;
 }
 
-.star-icon{
-    height:100%;
+.star-icon {
+    height: 100%;
 }
 
 #customHr {
@@ -46,6 +46,7 @@
     display: flex;
     gap: 2%;
     margin-top: 50px;
+    
 }
 
 #images0 {
@@ -67,7 +68,7 @@
     width: auto;
     height: 100px;
     position: relative;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .image img {
@@ -148,8 +149,8 @@
     cursor: pointer;
 }
 
-.selected-color{
-    color:white;
+.selected-color {
+    color: white;
 }
 
 #choseSize {
@@ -172,10 +173,10 @@
     cursor: pointer;
 }
 
-#tag{
+#tag {
     font-size: 0.8rem;
-    margin-bottom:10px;
-    color:#909090;
+    margin-bottom: 10px;
+    color: #909090;
 }
 
 #addToCart {
@@ -201,12 +202,202 @@
     color: white;
     border: none;
     border-radius: 20px;
-    padding:10px;
-    cursor:pointer;
+    padding: 10px;
+    cursor: pointer;
 }
 
 #mobileView {
     display: none;
+}
+
+#reviewAll {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#reviewCard {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #eee;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#reviewUser {
+    font-weight: 600;
+}
+
+#reviewDescription {
+    color: #909090;
+    font-size: 0.9rem;
+}
+
+#postedDate {
+    color: rgb(101, 100, 100);
+    font-size: 0.95rem;
+}
+
+#reviewCardHeader {
+    height: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+#reviewData {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    margin-bottom: 20px;
+}
+
+#reviewData>div {
+    font-size: 1.3rem;
+    font-weight: 650;
+}
+
+#buttons {
+    width: 30%;
+    gap: 7%;
+    display: flex;
+    padding-right: 20px;
+}
+
+#buttons select {
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+    background: #eee;
+}
+
+#buttons button {
+    height: 100%;
+    border-radius: 20px;
+    background: black;
+    color: white;
+}
+
+#buttons select,
+#buttons button {
+    width: 50%;
+    padding: 7px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#writeReview {
+    height: 60%;
+    width: 50%;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    z-index: 900;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    padding: 20px;
+    display: flex;
+}
+
+#crossButton{
+    background: red;
+    color:white;
+    height:40px;
+    width:40px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    font-size: 1.2rem;
+    padding:10px;
+    position:absolute;
+    top:-50px;
+    right:-50px;
+
+
+}
+
+#starReview {
+    flex: 1;
+    height: 100%;
+    border-right: 2px solid #eee;
+    padding-right: 20px;
+    position: relative;
+}
+
+#writeAReview {
+    flex: 1;
+    height: 100%;
+    padding-left: 20px;
+}
+
+#starReview>div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#starReviewHeader {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#exampleTextArea {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    resize: none;
+    width: 100%;
+    height: 70%;
+}
+
+#exampleTextArea:focus {
+    outline: none;
+}
+
+#postButton {
+    color: white;
+    padding: 10px;
+    background: black;
+    border-radius: 20px;
+    width: 20%;
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+#readMoreButton {
+    cursor: pointer;
+}
+
+#glassEffect {
+    background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 500;
+    position:absolute;
+    height:200%;
+    width:100%;
+    left:-10px;
+}
+
+#starReview>span{
+    color:Red;
+}
+
+#readMoreButton{
+    border:none;
+    background: none;
+    cursor:pointer;
+    color:#909090;
 }
 
 
@@ -218,22 +409,45 @@
     #productImages {
         flex-direction: row;
         justify-content: start;
-        width:fit-content;
-        flex:1;
+        width: fit-content;
+        flex: 1;
     }
 
-    #showImage{
-        flex:5;
+    #showImage {
+        flex: 5;
     }
 
-    #showImage img{
-        width:100%;
-        height:auto;
+    #showImage img {
+        width: 100%;
+        height: auto;
     }
 
-    .image{
+    .image {
         width: fit-content;
     }
+
+    #buttons {
+        width: 45%;
+    }
+
+    #writeReview {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    #starReview {
+        border: none;
+    }
+
+    #postButton {
+        bottom: 10px;
+    }
+
+    #glassEffect{
+        /* width:150%; */
+    }
+
+    
 }
 
 @media (min-width: 401px) and (max-width: 700px) {
@@ -260,7 +474,10 @@
         justify-content: start;
     }
 
-    #image1, #image2, #image3, #image4 {
+    #image1,
+    #image2,
+    #image3,
+    #image4 {
         height: 100px;
         display: flex;
         justify-content: right;
@@ -268,8 +485,30 @@
 
     #description {
         flex: 5;
-        padding:0;
+        padding: 0;
         margin-top: 30px;
+    }
+
+    #reviewAll {
+        flex-direction: column;
+    }
+
+    #reviewCard {
+        width: 100%;
+    }
+
+    #reviewData {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #buttons {
+        width: 70%;
+    }
+
+    #glassEffect {
+        height: 380%;
     }
 }
 
@@ -283,7 +522,7 @@
         margin-top: 30px;
     }
 
-    #header{
+    #header {
         font-size: 1.5rem;
     }
 
@@ -292,8 +531,8 @@
         justify-content: center;
     }
 
-    #description{
-        padding:0;
+    #description {
+        padding: 0;
     }
 
     #showImage img {
@@ -302,13 +541,45 @@
         position: relative;
     }
 
-    .image{
+    .image {
         border-radius: 0;
-        width:50px;
+        width: 50px;
     }
 
-    .image img{
-        height:60px;
+    .image img {
+        height: 60px;
         border-radius: 10px;
+    }
+
+    #reviewAll {
+        flex-direction: column;
+    }
+
+    #reviewCard {
+        width: 90%;
+    }
+
+    #reviewData {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #buttons {
+        width: 100%;
+    }
+
+    #glassEffect {
+        height: 400%;
+        width:100%;
+    }
+
+    #writeReview {
+        width: 80vw;
+        left: 5vw;
+    }
+
+    #crossButton{
+        right:0;
     }
 }

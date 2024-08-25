@@ -3,6 +3,8 @@ import './productPage.css'
 import 'boxicons';
 import star from "../Assets/star.png"
 import halfStar from "../Assets/halfstar.png"
+import ReviewCard from "./review.jsx";
+import WriteReview from "./writeReview.jsx";
 
 const ProductPage = ({ cartProduct, setCartProduct }) => {
 
@@ -53,12 +55,14 @@ const ProductPage = ({ cartProduct, setCartProduct }) => {
             {
                 "user": "JohnDoe123",
                 "rating": 4.5,
-                "comment": "Great shirt, very comfortable and fits well."
+                "comment": "Great shirt, very comfortable and fits well.",
+                "date": "12/1/2024"
             },
             {
                 "user": "JaneSmith456",
                 "rating": 4.0,
-                "comment": "Good quality, but the color is slightly different from the picture."
+                "comment": "Good quality, but the color is slightly different from the picture.",
+                "date": "4/22/2023"
             }
         ]
     }
@@ -70,10 +74,21 @@ const ProductPage = ({ cartProduct, setCartProduct }) => {
     const [quantity, setQuantity] = useState(1);
     const [selectedColor, setSelectedColor] = useState();
     const [selectedSize, setSelectedSize] = useState();
+    const [reviewBox, setReviewBox] = useState(false);
+    const [productReviews, setProductReviews] = useState(product.reviews);
+    const [glassEffect, setGlassEffect] = useState(false);
+    const [visibleReviews, setVisibleReviews] = useState(6);
+    const [sortOption, setSortOption] = useState('Latest');
 
 
     const handleImageClick = (image) => {
         setSelectedImage(image.url);
+    };
+
+    const addReview = (newReview) => {
+        setProductReviews([...productReviews, newReview]);
+        setReviewBox(false);
+        setGlassEffect(false);
     };
 
     const calculatePrice = () => {
@@ -97,10 +112,44 @@ const ProductPage = ({ cartProduct, setCartProduct }) => {
         setCartProduct([...cartProduct, item]);
     };
 
+    const toggleReviewBox = () => {
+        setReviewBox(!reviewBox);
+        setGlassEffect(!glassEffect);
+    }
+
+    const handleReadMore = () => {
+        setVisibleReviews(productReviews.length);
+    };
+
+    const handleSortChange = (selectedOption = sortOption) => {
+        const sortedReviews = [...productReviews].sort((a, b) => {
+            if (selectedOption === 'Latest') {
+                return new Date(b.date) - new Date(a.date); // sort by latest first
+            } else if (selectedOption === 'Oldest') {
+                return new Date(a.date) - new Date(b.date); // sort by oldest first
+            }
+            return 0;
+        });
+
+        setProductReviews(sortedReviews);
+    };
+
+    const handleSortChangeSelect = (e) => {
+        setSortOption(e.target.value);
+        handleSortChange(e.target.value);
+    };
+
+    useEffect(() => {
+        handleSortChange();
+    }, [productReviews, sortOption]);
+
+    
+
     return (
         <div id="viewProduct">
+            {glassEffect && (<div id="glassEffect"></div>)}
             <div id="innerContainer">
-
+                {reviewBox && (<WriteReview addReview={addReview} toggleReviewBox={toggleReviewBox} />)}
                 <div id="images0">
                     <div id="productImages">
                         {product.images.map((image, index) => (
@@ -177,14 +226,32 @@ const ProductPage = ({ cartProduct, setCartProduct }) => {
             </div>
             <hr id="customHr" />
             <div id="reviewPage">
-                <div id="reviewHeader"></div>
                 <div id="reviewData">
                     <div>All Reviews</div>
                     <div id="buttons">
-                        <select></select>
-                        <button>Write a Review</button>
+                        <select value={sortOption} onChange={handleSortChangeSelect}>
+                            <option value="Latest">Latest</option>
+                            <option value="Oldest">Oldest</option>
+                        </select>
+                        <button onClick={toggleReviewBox}>Write a Review</button>
                     </div>
                 </div>
+                <div id="reviewAll">
+                    {productReviews.slice(0, visibleReviews).map((review, index) => (
+                        <ReviewCard
+                            key={index}
+                            user={review.user}
+                            rating={review.rating}
+                            comment={review.comment}
+                            date={review.date}
+                        />
+                    ))}
+                </div>
+                {visibleReviews < productReviews.length && (
+                    <button id="readMoreButton" onClick={handleReadMore}>
+                        Read More
+                    </button>
+                )}
             </div>
         </div>
     );
