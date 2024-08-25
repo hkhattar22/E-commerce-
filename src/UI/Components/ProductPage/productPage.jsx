@@ -5,8 +5,13 @@ import star from "../Assets/star.png"
 import halfStar from "../Assets/halfstar.png"
 import ReviewCard from "./review.jsx";
 import WriteReview from "./writeReview.jsx";
+import { useNavigate } from 'react-router-dom';
+
 
 const ProductPage = ({ cartProduct, setCartProduct }) => {
+
+    const navigate = useNavigate();
+
 
     const product = {
         "id": "shirt001",
@@ -110,6 +115,7 @@ const ProductPage = ({ cartProduct, setCartProduct }) => {
             image: product.images[0].url
         };
         setCartProduct([...cartProduct, item]);
+        navigate('/cart');
     };
 
     const toggleReviewBox = () => {
